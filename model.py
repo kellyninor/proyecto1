@@ -24,7 +24,7 @@ def calcularEdadVehiculo (data):
 
 data = calcularEdadVehiculo(dataTraining)
 
-features = data.drop(columns=['Prfeaice'])  # Features
+features = data.drop(columns=['Price'])  # Features
 
 # Escalar features
 numeric_features = ['Mileage', 'Age','Year']
