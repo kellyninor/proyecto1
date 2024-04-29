@@ -9,7 +9,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
-from sklearn.ensemble import DecisionTreeRegressor
+from sklearn.tree import DecisionTreeRegressor
 from joblib import dump
 
 # Carga de datos de archivo .csv
