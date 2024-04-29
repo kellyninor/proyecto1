@@ -74,33 +74,33 @@ print("Dimensiones del conjunto de prueba X:", X_test.shape)
 print("Dimensiones del conjunto de entrenamiento y:", y_train.shape)
 print("Dimensiones del conjunto de prueba y:", y_test.shape)
 
-# Inicializar el modelo de Random Forest
-random_forest = RandomForestRegressor(random_state=42)
+# Inicializar el modelo de árbol de decisión
+decision_tree = DecisionTreeRegressor(random_state=42)
 
 # Entrenar el modelo
-random_forest.fit(X_train, y_train)
+decision_tree.fit(X_train, y_train)
 
 # Predicción en el conjunto de entrenamiento y prueba
-y_train_pred = random_forest.predict(X_train)
-y_test_pred = random_forest.predict(X_test)
+y_train_pred = decision_tree.predict(X_train)
+y_test_pred = decision_tree.predict(X_test)
 
 # Evaluar el rendimiento del modelo
-rf_train_mse = mean_squared_error(y_train, y_train_pred)
-rf_test_mse = mean_squared_error(y_test, y_test_pred)
-rf_train_r2 = r2_score(y_train, y_train_pred)
-rf_test_r2 = r2_score(y_test, y_test_pred)
+ds_train_mse = mean_squared_error(y_train, y_train_pred)
+ds_test_mse = mean_squared_error(y_test, y_test_pred)
+ds_train_r2 = r2_score(y_train, y_train_pred)
+ds_test_r2 = r2_score(y_test, y_test_pred)
 
-print("Error cuadrático medio (MSE) en conjunto de entrenamiento:", rf_train_mse)
-print("Error cuadrático medio (MSE) en conjunto de prueba:", rf_test_mse)
-print("Coeficiente de determinación (R^2) en conjunto de entrenamiento:", rf_train_r2)
-print("Coeficiente de determinación (R^2) en conjunto de prueba:", rf_test_r2)
+print("Error cuadrático medio (MSE) en conjunto de entrenamiento:", ds_train_mse)
+print("Error cuadrático medio (MSE) en conjunto de prueba:", ds_test_mse)
+print("Coeficiente de determinación (R^2) en conjunto de entrenamiento:", ds_train_r2)
+print("Coeficiente de determinación (R^2) en conjunto de prueba:", ds_test_r2)
 
 
 # Nombre de archivo para guardar el modelo
-file_name = 'random_forest.pkl'
+file_name = 'decision_tree.pkl'
 
 # Guardar el modelo como un archivo .pkl
-dump(random_forest, file_name)
+dump(decision_tree, file_name)
 
 print("Modelo guardado como:", file_name)
 
