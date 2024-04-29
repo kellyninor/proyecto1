@@ -3,7 +3,7 @@ import joblib
 import pandas as pd
 
 # Cargar el modelo entrenado y el preprocesador
-loaded_model = joblib.load('random_forest_model.pkl')
+loaded_model = joblib.load('decision_tree.pkl')
 preprocessor = joblib.load('preprocessor.pkl')
 scaler = joblib.load('scaler.pkl')
 
